@@ -11,8 +11,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: MixedRealityToolkit_Testing
+  companyName: GGJ
+  productName: LastTransmission
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -531,9 +531,9 @@ PlayerSettings:
   metroPackageVersion: 1.0.0.0
   metroCertificatePath: Assets/WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: Piterion
-  metroCertificateIssuer: Piterion
-  metroCertificateNotAfter: 008ba386448fd401
+  metroCertificateSubject: DefaultCompany
+  metroCertificateIssuer: DefaultCompany
+  metroCertificateNotAfter: 809c8fffefb5d401
   metroApplicationDescription: MixedRealityToolkit_Testing
   wsaImages: {}
   metroTileShortName: 
