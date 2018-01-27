@@ -9,9 +9,12 @@ public class TransmitterStationControll : MonoBehaviour {
     public TransmitterScript ActiveStation;
     public GazeableSystem GazeableSystem;
 
+    private GameManagerScript _gameManager;
+
     private void Awake()
     {
         SetActiveStation(TransmitterStations[0].GetComponent<TransmitterScript>());
+        _gameManager = FindObjectOfType<GameManagerScript>();
     }
 
     private void SetActiveStation(TransmitterScript activeStation)
@@ -35,6 +38,10 @@ public class TransmitterStationControll : MonoBehaviour {
 
     private void FixedUpdate()
     {
+        if (_gameManager.IsGameOver)
+        {
+            return;
+        }
         foreach (GameObject transmitter in TransmitterStations)
         {
             if (transmitter.GetComponent<TransmitterScript>().IsActive)
@@ -43,10 +50,21 @@ public class TransmitterStationControll : MonoBehaviour {
             }
         }
         
+        // check for game won
+        if (TransmitterStations[TransmitterStations.Length -1].GetComponent<TransmitterScript>().IsActive)
+        {
+            _gameManager.GameWon();
+        }
+
     }
 
     // Update is called once per frame
     void Update () {
+        if (_gameManager.IsGameOver)
+        {
+            return;
+        }
+
          bool fire = Input.GetButton("FireMessage");
          float horizontal = Input.GetAxis("Horizontal");
 
