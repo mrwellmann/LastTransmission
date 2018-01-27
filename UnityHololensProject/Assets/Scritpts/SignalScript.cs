@@ -24,6 +24,7 @@ public class SignalScript : MonoBehaviour {
         if (lifeTime < 0)
         {
             Destroy(this.gameObject);
+            GameOver();
         }
         // if collided with Planet -> Game Over
         // if collided with Station -> New Station is active 
@@ -39,8 +40,14 @@ public class SignalScript : MonoBehaviour {
         } else
         {
             Debug.Log("Transmission failed. Game Over.");
+            GameOver();
             // Game Over
         }
+    }
+
+    private void GameOver()
+    {
+        GameObject.FindObjectOfType<GameManagerScript>().GameOver();
     }
 
     // Update is called once per frame

@@ -10,7 +10,7 @@ public class TransmitterStationControll : MonoBehaviour {
 
     private void Awake()
     {
-        ActiveStation = TransmitterStations[0].GetComponent<TransmitterScript>(); ;
+        ActiveStation = TransmitterStations[0].GetComponent<TransmitterScript>();
     }
 
     public void ActivateStation(int stationNo)
