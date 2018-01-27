@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class GameManagerScript : MonoBehaviour {
 
     public RectTransform gameOverPanel;
+    public RectTransform gameWonPanel;
+
+    public bool IsGameOver { get; set; }
 
     public void PlayAgain()
     {
@@ -15,10 +18,19 @@ public class GameManagerScript : MonoBehaviour {
     public void GameOver()
     {
         gameOverPanel.gameObject.SetActive(true);
+        IsGameOver = true;
     }
 
-	// Use this for initialization
-	void Start () {
+
+    public void GameWon()
+    {
+        gameWonPanel.gameObject.SetActive(true);
+        Debug.Log("Game Won.");
+        IsGameOver = true;
+    }
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
