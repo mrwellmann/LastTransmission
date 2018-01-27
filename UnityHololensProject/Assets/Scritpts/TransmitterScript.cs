@@ -25,23 +25,16 @@ public class TransmitterScript : MonoBehaviour {
         }
         var stationPos = transform.Find("StationObject").gameObject.transform.position;
         var stationRot = transform.Find("StationObject/Antenna").gameObject.transform.rotation;
-        // spawn MessageObject
-        // Add velocity Antenna.Vector3.forward
         GameObject signalClone = Instantiate(Signal, stationPos, stationRot);
-        Debug.Log("Spawning signal at" + transform.localPosition);
-
-
-        //signalClone.GetComponent<MyRocketScript>().DoSomething();
-
     }
 
     // Use this for initialization
     void Start () {
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 

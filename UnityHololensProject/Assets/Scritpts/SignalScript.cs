@@ -4,24 +4,42 @@ using UnityEngine;
 
 public class SignalScript : MonoBehaviour {
 
-    private Rigidbody MyRigidbody;
+    public float transmissionSpeed = 1.5f;
 
-    public float transmissionSpeed = 3.0f;
+    public float lifeTime = 1.5f;
 
     private void Awake()
     {
-        MyRigidbody = GetComponentInChildren<Rigidbody>();
+
     }
 
     // Use this for initialization
     void Start () {
-        MyRigidbody.velocity = transform.forward * transmissionSpeed;
+        GetComponent<Rigidbody>().velocity = transform.forward * transmissionSpeed;
     }
 
     private void FixedUpdate()
     {
+        lifeTime -= Time.fixedDeltaTime;
+        if (lifeTime < 0)
+        {
+            Destroy(this.gameObject);
+        }
         // if collided with Planet -> Game Over
         // if collided with Station -> New Station is active 
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        //Debug.Log("Collider: " + col.gameObject.tag);
+        if (col.gameObject.tag == "Transmitter")
+        {
+            col.gameObject.GetComponent<TransmitterScript>().IsActive = true;
+            Destroy(this.gameObject);
+        } else
+        {
+            // Game Over
+        }
     }
 
     // Update is called once per frame
