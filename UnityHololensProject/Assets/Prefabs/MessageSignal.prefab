@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33261680856725466}
   - component: {fileID: 136153924205308744}
   - component: {fileID: 23667217132286768}
+  - component: {fileID: 54025659866612592}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -40,7 +41,7 @@ GameObject:
   - component: {fileID: 114091125653409266}
   m_Layer: 0
   m_Name: MessageSignal
-  m_TagString: Untagged
+  m_TagString: Signal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,6 +143,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1274131909753966}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &54025659866612592
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1274131909753966}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 36
+  m_CollisionDetection: 0
 --- !u!114 &114091125653409266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -153,6 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 475634e41056e84448e24c7067a8cf6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transmissionSpeed: 2
 --- !u!136 &136153924205308744
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -160,7 +177,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1274131909753966}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
