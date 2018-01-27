@@ -11,7 +11,7 @@ public class TransmitterStationControll : MonoBehaviour {
 
     private void Awake()
     {
-        ActiveStation = TransmitterStations[0].GetComponent<TransmitterScript>();
+        SetActiveStation(TransmitterStations[0].GetComponent<TransmitterScript>());
     }
 
     private void SetActiveStation(TransmitterScript activeStation)
@@ -49,10 +49,15 @@ public class TransmitterStationControll : MonoBehaviour {
     void Update () {
          bool fire = Input.GetButton("FireMessage");
          float horizontal = Input.GetAxis("Horizontal");
-         if (horizontal != 0.0f)
-         {
-             ActiveStation.Turn(horizontal);
-         }
+
+        if (!Hololens)
+        {
+            if (horizontal != 0.0f)
+            {
+                ActiveStation.Turn(horizontal);
+            }
+        }
+
 
          if (fire)
          {

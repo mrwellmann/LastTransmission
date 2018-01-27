@@ -47,7 +47,7 @@ public class SignalScript : MonoBehaviour {
 
     private void GameOver()
     {
-        GameObject.FindObjectOfType<GameManagerScript>().GameOver();
+        //GameObject.FindObjectOfType<GameManagerScript>().GameOver();
     }
 
     // Update is called once per frame
