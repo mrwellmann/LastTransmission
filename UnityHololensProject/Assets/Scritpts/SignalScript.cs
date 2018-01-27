@@ -34,10 +34,11 @@ public class SignalScript : MonoBehaviour {
         //Debug.Log("Collider: " + col.gameObject.tag);
         if (col.gameObject.tag == "Transmitter")
         {
-            col.gameObject.GetComponent<TransmitterScript>().IsActive = true;
+            col.gameObject.GetComponentInParent<TransmitterScript>().IsActive = true;
             Destroy(this.gameObject);
         } else
         {
+            Debug.Log("Transmission failed. Game Over.");
             // Game Over
         }
     }
