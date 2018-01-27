@@ -26,6 +26,7 @@ public class TransmitterScript : MonoBehaviour {
         var stationPos = transform.Find("StationObject").gameObject.transform.position;
         var stationRot = transform.Find("StationObject/Antenna").gameObject.transform.rotation;
         GameObject signalClone = Instantiate(Signal, stationPos, stationRot);
+        IsActive = false;
     }
 
     // Use this for initialization

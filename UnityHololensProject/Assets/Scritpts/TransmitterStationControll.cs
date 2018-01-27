@@ -22,9 +22,21 @@ public class TransmitterStationControll : MonoBehaviour {
         transmitterStations[stationNo].GetComponent<TransmitterScript>().IsActive = true;
         activeStation = transmitterStations[stationNo].GetComponent<TransmitterScript>();
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    private void FixedUpdate()
+    {
+        foreach (GameObject transmitter in transmitterStations)
+        {
+            if (transmitter.GetComponent<TransmitterScript>().IsActive)
+            {
+                activeStation = transmitter.GetComponent<TransmitterScript>();
+            }
+        }
+        
+    }
+
+    // Update is called once per frame
+    void Update () {
         bool fire = Input.GetButton("FireMessage");
         float horizontal = Input.GetAxis("Horizontal");
         if (horizontal != 0.0f)
