@@ -26,6 +26,11 @@ public class TransmitterScript : MonoBehaviour {
         TransmitterAntenna.transform.Rotate(Vector3.up, delta * turnVelocity);
     }
 
+    public void SetAngel(float angel)
+    {
+        TransmitterAntenna.transform.eulerAngles = new Vector3 (TransmitterAntenna.transform.eulerAngles.x, angel, TransmitterAntenna.transform.eulerAngles.z);
+    }
+
     public void FireMessage()
     {
         if (GameObject.FindGameObjectsWithTag("Signal").Length > 0)
