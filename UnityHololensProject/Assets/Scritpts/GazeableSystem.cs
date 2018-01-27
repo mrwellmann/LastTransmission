@@ -8,50 +8,42 @@ using UnityEngine.Events;
 public class GazeableSystem : MonoBehaviour, IFocusable, IInputClickHandler
 {
     public Renderer rendererComponent;
-
-    [System.Serializable]
-    public class OnPicked : UnityEvent<float> { }
-
-    public OnPicked OnGazed = new OnPicked();
-    public OnPicked OnPickedAngel = new OnPicked();
+    public TransmitterScript ActiveStation;
 
     private bool gazing = false;
 
     private void Update()
     {
         if (gazing == false) return;
-        UpdatePickedColor(OnGazed);
+        UpdateGazing();
     }
 
-    private void UpdatePickedColor(OnPicked cb)
+    private void UpdateGazing()
     {
         RaycastHit hit = GazeManager.Instance.HitInfo;
 
         if (hit.transform.gameObject != rendererComponent.gameObject) { return; }
 
-        var texture = (Texture2D)rendererComponent.material.mainTexture;
+        Vector3 hitpos = GazeManager.Instance.HitPosition;
 
-        Vector2 pixelUV = hit.textureCoord;
-        pixelUV.x *= texture.width;
-        pixelUV.y *= texture.height;
-
-        //float angel = 
-        //    texture.GetPixel((int)pixelUV.x, (int)pixelUV.y);
-        //cb.Invoke(angel);
+        ActiveStation.TransmitterAntenna.transform.LookAt(hitpos);
     }
 
     public void OnFocusEnter()
     {
         gazing = true;
+        //GetComponent<MeshRenderer>().enabled = true;
     }
 
     public void OnFocusExit()
     {
         gazing = false;
+        //GetComponent<MeshRenderer>().enabled = false;
     }
 
     public void OnInputClicked(InputClickedEventData eventData)
     {
-        UpdatePickedColor(OnPickedAngel);
+        UpdateGazing();
+        ActiveStation.FireMessage();
     }
 }

@@ -8,3 +8,12 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/main_hololense.unity
+    guid: c0514dfd2e6353047a8b8ec6c9e27203
+  - enabled: 0
+    path: Assets/Scenes/main.unity
+    guid: 53f8e800fd97d6b47b00c394181b320e
+  - enabled: 0
+    path: Assets/HoloToolkit-Examples/ColorPicker/ColorPickerExample.unity
+    guid: 1f4ed52dbc84cd048b7bbc3bb22bebbf

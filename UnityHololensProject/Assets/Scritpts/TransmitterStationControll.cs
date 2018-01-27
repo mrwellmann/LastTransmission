@@ -7,10 +7,20 @@ public class TransmitterStationControll : MonoBehaviour {
     public GameObject[] TransmitterStations;
     public bool Hololens = false;
     public TransmitterScript ActiveStation;
+    public GazeableSystem GazeableSystem;
 
     private void Awake()
     {
         ActiveStation = TransmitterStations[0].GetComponent<TransmitterScript>();
+    }
+
+    private void SetActiveStation(TransmitterScript activeStation)
+    {
+        ActiveStation = activeStation;
+        if (GazeableSystem)
+        {
+            GazeableSystem.ActiveStation = ActiveStation;
+        }
     }
 
     public void ActivateStation(int stationNo)
@@ -20,7 +30,7 @@ public class TransmitterStationControll : MonoBehaviour {
             transmitter.GetComponent<TransmitterScript>().IsActive = false;
         }
         TransmitterStations[stationNo].GetComponent<TransmitterScript>().IsActive = true;
-        ActiveStation = TransmitterStations[stationNo].GetComponent<TransmitterScript>();
+        SetActiveStation(TransmitterStations[stationNo].GetComponent<TransmitterScript>());
     }
 
     private void FixedUpdate()
@@ -29,7 +39,7 @@ public class TransmitterStationControll : MonoBehaviour {
         {
             if (transmitter.GetComponent<TransmitterScript>().IsActive)
             {
-                ActiveStation = transmitter.GetComponent<TransmitterScript>();
+                SetActiveStation(transmitter.GetComponent<TransmitterScript>());
             }
         }
         
@@ -37,25 +47,22 @@ public class TransmitterStationControll : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+         bool fire = Input.GetButton("FireMessage");
+         float horizontal = Input.GetAxis("Horizontal");
+         if (horizontal != 0.0f)
+         {
+             ActiveStation.Turn(horizontal);
+         }
 
-        if (!Hololens)
-        {
-            bool fire = Input.GetButton("FireMessage");
-            float horizontal = Input.GetAxis("Horizontal");
-            if (horizontal != 0.0f)
-            {
-                ActiveStation.Turn(horizontal);
-            }
-
-            if (fire)
-            {
-                ActiveStation.FireMessage();
-            }
-        }
+         if (fire)
+         {
+            ActiveStation.FireMessage();
+         }
     }
 
-    public void FireSignal()
+    public void FireSignal(float angel)
     {
+        ActiveStation.SetAngel(angel);
         ActiveStation.FireMessage();
     }
 
