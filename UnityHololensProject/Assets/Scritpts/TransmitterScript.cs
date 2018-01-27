@@ -10,7 +10,16 @@ public class TransmitterScript : MonoBehaviour {
 
     public float turnVelocity = 2.0f;
 
-    public bool IsActive { get; set; }
+    private bool _isActive;
+    public bool IsActive { get
+        {
+            return _isActive;
+        }
+        set {
+            _isActive = value;
+            TransmitterAntenna.SetActive(value);
+        }
+    }
 
     public void Turn(float delta)
     {
