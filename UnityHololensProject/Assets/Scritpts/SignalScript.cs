@@ -53,6 +53,10 @@ public class SignalScript : MonoBehaviour {
         {
             GameObject.FindObjectOfType<GameManagerScript>().GameOver();
         }
+        else if(controll && controll.Hololens)
+        {
+            GameObject.FindObjectOfType<GameManagerScript>().PlayAgain();
+        }
     }
 
     // Update is called once per frame
