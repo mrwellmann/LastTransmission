@@ -8,6 +8,10 @@ public class TransmitterScript : MonoBehaviour {
 
     public GameObject Signal;
 
+    public AudioClip sendSignal;
+
+    public AudioClip receiveSignal;
+
     public float turnVelocity = 2.0f;
 
     private Renderer _stationRenderer;
@@ -18,8 +22,20 @@ public class TransmitterScript : MonoBehaviour {
             return _isActive;
         }
         set {
+            if (value == _isActive)
+            {
+                return;
+            }
             _isActive = value;
             TransmitterAntenna.SetActive(value);
+
+            if (value)
+            {
+                GetComponent<AudioSource>().PlayOneShot(receiveSignal);
+            }
+            {
+                GetComponent<AudioSource>().PlayOneShot(sendSignal);
+            }
         }
     }
 

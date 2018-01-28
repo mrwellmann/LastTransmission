@@ -10,6 +10,8 @@ public class GameManagerScript : MonoBehaviour {
 
     public bool IsGameOver { get; set; }
 
+    public AudioClip gameWonMessage;
+
     public void PlayAgain()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -27,6 +29,7 @@ public class GameManagerScript : MonoBehaviour {
         gameWonPanel.gameObject.SetActive(true);
         Debug.Log("Game Won.");
         IsGameOver = true;
+        Camera.main.GetComponent<AudioSource>().PlayOneShot(gameWonMessage);
     }
 
     // Use this for initialization
