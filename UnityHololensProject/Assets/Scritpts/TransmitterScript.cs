@@ -10,6 +10,8 @@ public class TransmitterScript : MonoBehaviour {
 
     public float turnVelocity = 2.0f;
 
+    private Renderer _stationRenderer;
+
     private bool _isActive;
     public bool IsActive { get
         {
@@ -44,13 +46,23 @@ public class TransmitterScript : MonoBehaviour {
     }
 
     // Use this for initialization
-    void Start () {
-		
-	}
+    void Awake () {
+        _stationRenderer = transform.Find("StationObject/Station").GetComponent<Renderer>();
+    }
 
     // Update is called once per frame
     void Update () {
-		
+
+                  Material mat = _stationRenderer.material;
+
+            float emission = Mathf.PingPong(Time.time, 1.0f);
+
+        
+            Color baseColor =  IsActive ? Color.green : Color.red;
+
+            Color finalColor = baseColor * Mathf.LinearToGammaSpace(emission);
+
+            mat.SetColor("_EmissionColor", finalColor);
 	}
 
 }

@@ -20,6 +20,7 @@ public class TransmitterStationControll : MonoBehaviour {
     private void SetActiveStation(TransmitterScript activeStation)
     {
         ActiveStation = activeStation;
+        ActiveStation.GetComponent<TransmitterScript>().IsActive = true;
         if (GazeableSystem)
         {
             GazeableSystem.ActiveStation = ActiveStation;
