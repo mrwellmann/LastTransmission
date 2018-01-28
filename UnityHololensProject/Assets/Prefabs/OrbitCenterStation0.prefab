@@ -356,7 +356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8249228ccad1df4983443e4d8934109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 0.733
+  radius: 0.71
   numSegments: 128
 --- !u!114 &114721578894132680
 MonoBehaviour:
