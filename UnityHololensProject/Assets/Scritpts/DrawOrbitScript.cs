@@ -17,13 +17,30 @@ public class DrawOrbitScript: MonoBehaviour
         DoRenderer();
     }
 
+    private bool IsHololens()
+    {
+        TransmitterStationControll control = this.gameObject.GetComponentInParent<TransmitterStationControll>();
+        if (control)
+        {
+            return control.Hololens;
+        }
+        return false;
+    }
+
     public void DoRenderer()
     {
         LineRenderer lineRenderer = gameObject.GetComponent<LineRenderer>();
         Color c1 = new Color(0.5f, 0.5f, 0.5f, 1);
         lineRenderer.material = new Material(Shader.Find("Particles/Additive"));
         lineRenderer.SetColors(c1, c1);
-        lineRenderer.SetWidth(0.01f, 0.01f);
+        if (IsHololens())
+        {
+            lineRenderer.SetWidth(0.002f, 0.002f);
+        }
+        else
+        {
+            lineRenderer.SetWidth(0.01f, 0.01f);
+        }
         lineRenderer.SetVertexCount(numSegments + 1);
         lineRenderer.useWorldSpace = false;
 
