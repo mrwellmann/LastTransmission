@@ -426,7 +426,7 @@ MonoBehaviour:
   TransmitterAntenna: {fileID: 1472548731241818}
   Signal: {fileID: 1542156480894442, guid: bb57ca618b81a1a4083d74b127020df1, type: 2}
   sendSignal: {fileID: 8300000, guid: 275e5fb207dbb2642ae7361d01f0e27a, type: 3}
-  receiveSignal: {fileID: 8300000, guid: 275e5fb207dbb2642ae7361d01f0e27a, type: 3}
+  receiveSignal: {fileID: 8300000, guid: 93eef795b126233468b75c0079dffb1f, type: 3}
   turnVelocity: 2
 --- !u!114 &114426399229965546
 MonoBehaviour:
