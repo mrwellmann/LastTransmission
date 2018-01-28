@@ -1127,15 +1127,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4024440650577830, guid: b427080fd7bf56644b4cc5152293f8df, type: 2}
       propertyPath: m_LocalScale.x
-      value: 50
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4024440650577830, guid: b427080fd7bf56644b4cc5152293f8df, type: 2}
       propertyPath: m_LocalScale.y
-      value: 50
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4024440650577830, guid: b427080fd7bf56644b4cc5152293f8df, type: 2}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1897549045769592, guid: b427080fd7bf56644b4cc5152293f8df, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1897549045769592, guid: b427080fd7bf56644b4cc5152293f8df, type: 2}
+      propertyPath: m_TagString
+      value: Gazing
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b427080fd7bf56644b4cc5152293f8df, type: 2}

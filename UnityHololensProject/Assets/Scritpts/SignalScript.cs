@@ -37,7 +37,8 @@ public class SignalScript : MonoBehaviour {
         {
             col.gameObject.GetComponentInParent<TransmitterScript>().IsActive = true;
             Destroy(this.gameObject);
-        } else
+        }
+        else if (col.gameObject.tag != "Gazing")
         {
             Debug.Log("Transmission failed. Game Over.");
             GameOver();
