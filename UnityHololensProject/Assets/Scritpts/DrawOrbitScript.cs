@@ -30,9 +30,10 @@ public class DrawOrbitScript: MonoBehaviour
     public void DoRenderer()
     {
         LineRenderer lineRenderer = gameObject.GetComponent<LineRenderer>();
-        Color c1 = new Color(0.5f, 0.5f, 0.5f, 1);
+        Color c1 = new Color(0.5f, 0.5f, 0.5f, 0.4f);
         lineRenderer.material = new Material(Shader.Find("Particles/Additive"));
-        lineRenderer.SetColors(c1, c1);
+        lineRenderer.startColor = c1;
+        lineRenderer.endColor = c1;
         if (IsHololens())
         {
             lineRenderer.SetWidth(0.002f, 0.002f);

@@ -252,7 +252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transmissionSpeed: 0.5
-  lifeTime: 5
+  lifeTime: 4
 --- !u!135 &135023530437881010
 SphereCollider:
   m_ObjectHideFlags: 1
