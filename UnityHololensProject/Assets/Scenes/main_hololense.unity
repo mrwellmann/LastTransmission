@@ -203,6 +203,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114487415504670344, guid: 11ad66e2bf189144a98399a4c64fb5fa,
+        type: 2}
+      propertyPath: Signal
+      value: 
+      objectReference: {fileID: 1542156480894442, guid: 4b06d4b8ee4c4d745bb44cbb296307e8,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11ad66e2bf189144a98399a4c64fb5fa, type: 2}
   m_IsPrefabParent: 0
@@ -1757,6 +1763,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114741263090579142, guid: 543a97b4cef3d0c428e52c9214e36d44,
+        type: 2}
+      propertyPath: Signal
+      value: 
+      objectReference: {fileID: 1542156480894442, guid: 4b06d4b8ee4c4d745bb44cbb296307e8,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 543a97b4cef3d0c428e52c9214e36d44, type: 2}
   m_IsPrefabParent: 0
@@ -2008,6 +2020,12 @@ Prefab:
       propertyPath: m_Parameters.widthMultiplier
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 114174218314629332, guid: a39ce0c98c3081442b2f724853dc1292,
+        type: 2}
+      propertyPath: Signal
+      value: 
+      objectReference: {fileID: 1542156480894442, guid: 4b06d4b8ee4c4d745bb44cbb296307e8,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a39ce0c98c3081442b2f724853dc1292, type: 2}
   m_IsPrefabParent: 0
