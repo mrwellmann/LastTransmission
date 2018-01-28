@@ -192,7 +192,7 @@ MonoBehaviour:
   MaxGazeCollisionDistance: 50
   RaycastLayerMasks:
   - serializedVersion: 2
-    m_Bits: 4294967291
+    m_Bits: 4294967240
   Stabilizer: {fileID: 114000011980027866}
   GazeTransform: {fileID: 0}
   DebugDrawRay: 0
